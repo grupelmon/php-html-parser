@@ -333,6 +333,9 @@ class Tag
 
         // add the attributes
         foreach (array_keys($this->attr) as $key) {
+            if( !is_string($key) ) {
+               $key = (string) $key;
+            }
             $info = $this->getAttribute($key);
             $val  = $info['value'];
             if (is_null($val)) {
